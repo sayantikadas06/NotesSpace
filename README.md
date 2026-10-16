@@ -114,6 +114,17 @@ Open the local URL displayed by Vite, usually:
 
 MongoDB stores the notes. The backend uses a Mongoose model to define the note structure.
 
+## Screenshots
+
+### Notes Dashboard
+![Notes Dashboard](screenshots/notes-dashboard.png)
+
+### Create or Edit a Note
+![Create/Edit Note](screenshots/create-note.png)
+
+### Search Notes
+![Search Notes](screenshots/search-notes.png)
+
 ## Future Improvements
 
 - User authentication
