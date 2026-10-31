@@ -4,7 +4,7 @@ import axios from "axios";
 import { Plus, Search, Pencil, Trash2, X, FileText } from "lucide-react";
 import "./App.css";
 
-const API_URL = "http://localhost:5000/api/notes";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/notes";
 
 function App() {
   const [notes, setNotes] = useState([]);
