@@ -1,31 +1,41 @@
 # NotesSpace — MERN Notes Application
 
-NotesSpace is a full-stack notes application built using the MERN stack. It allows users to create, view, edit, delete, and search notes through a responsive user interface.
+NotesSpace is a full-stack notes application built using the MERN stack. It allows users to create, view, edit, delete, and search notes through a responsive user interface. Notes are stored persistently in MongoDB.
+
+## Live Demo
+
+**Live Application:** https://notes-space-418feuwzq-sayantikadas06.vercel.app
+
+**GitHub Repository:** https://github.com/sayantikadas06/NotesSpace
 
 ## Features
 
 - Create new notes
-- View saved notes
+- View all saved notes
 - Edit existing notes
 - Delete notes
 - Search notes by title or content
-- Store notes in MongoDB
+- Store notes in MongoDB Atlas
 - Responsive user interface
 - REST API built with Express and Node.js
+- Data persistence across page refreshes
 
 ## Technologies Used
 
-**Frontend**
+### Frontend
 - React
 - Vite
 - Axios
 - CSS
+- Lucide React
 
-**Backend**
+### Backend
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
+- CORS
+- dotenv
 
 ## Project Structure
 
@@ -60,14 +70,14 @@ git clone https://github.com/sayantikadas06/NotesSpace.git
 cd NotesSpace
 ```
 
-### 2. Configure the backend
+### 2. Configure the Backend
 
 ```bash
 cd Backend
 npm install
 ```
 
-Create a `.env` file inside the `Backend` folder with your own configuration:
+Create a `.env` file inside the `Backend` folder:
 
 ```env
 PORT=5000
@@ -75,9 +85,9 @@ MONGODB_URI=your_mongodb_connection_string
 CLIENT_URL=http://localhost:5173
 ```
 
-Replace `your_mongodb_connection_string` with your own MongoDB connection string. Never publish your real credentials.
+Replace `your_mongodb_connection_string` with your own MongoDB connection string. Never publish your actual credentials.
 
-### 3. Start the backend
+### 3. Start the Backend
 
 From the `Backend` folder, run:
 
@@ -85,9 +95,11 @@ From the `Backend` folder, run:
 npm run dev
 ```
 
-If your `package.json` does not define a `dev` script, use the script that is available in your backend `package.json`.
+The backend will run at:
 
-### 4. Configure and start the frontend
+`http://localhost:5000`
+
+### 4. Configure and Start the Frontend
 
 Open a second terminal from the project root:
 
@@ -103,26 +115,44 @@ Open the local URL displayed by Vite, usually:
 
 ## API Endpoints
 
+Base URL: `/api/notes`
+
 | Method | Endpoint | Purpose |
 |---|---|---|
-| GET | `/api/notes` | Retrieve notes and search |
-| POST | `/api/notes` | Create a note |
-| PUT | `/api/notes/:id` | Update a note |
+| GET | `/api/notes` | Retrieve all notes |
+| GET | `/api/notes?q=keyword` | Search notes by title or content |
+| POST | `/api/notes` | Create a new note |
+| PUT | `/api/notes/:id` | Update an existing note |
 | DELETE | `/api/notes/:id` | Delete a note |
 
 ## Database
 
-MongoDB stores the notes. The backend uses a Mongoose model to define the note structure.
+MongoDB Atlas is used to store notes. The backend uses Mongoose to define the Note schema.
+
+Each note contains:
+- Title
+- Content
+- Created date
+- Updated date
+
+## Deployment
+
+- **Frontend:** Deployed on Vercel
+- **Backend:** Deployed on Render
+- **Database:** MongoDB Atlas
 
 ## Screenshots
 
 ### Notes Dashboard
+
 ![Notes Dashboard](screenshots/notes-dashboard.png)
 
 ### Create or Edit a Note
+
 ![Create/Edit Note](screenshots/create-note.png)
 
 ### Search Notes
+
 ![Search Notes](screenshots/search-notes.png)
 
 ## Future Improvements
@@ -130,13 +160,12 @@ MongoDB stores the notes. The backend uses a Mongoose model to define the note s
 - User authentication
 - Categories and tags
 - Note pinning
-- Deployment to a hosting platform
 
 ## Author
 
 **Sayantika Das**
 
-GitHub: [@sayantikadas06](https://github.com/sayantikadas06)
+GitHub: https://github.com/sayantikadas06
 
 ---
 
